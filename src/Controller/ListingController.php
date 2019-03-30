@@ -8,16 +8,20 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace Mindbird\Contao\Teams\Modules;
+namespace Mindbird\Contao\Teams\Controller;
 
 use Contao\Controller;
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\FilesModel;
 use Contao\FrontendTemplate;
-use Contao\Module;
+use Contao\ModuleModel;
 use Contao\StringUtil;
+use Contao\Template;
 use Mindbird\Contao\Teams\Models\Teams;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class Listing extends Module
+class ListingController extends AbstractFrontendModuleController
 {
     /**
      * Template.
@@ -28,10 +32,8 @@ class Listing extends Module
 
     protected $templateTeam = 'teams_item';
 
-    /**
-     * Compile the current element.
-     */
-    protected function compile()
+
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $team = Teams::findBy(
             'pid',
@@ -59,6 +61,8 @@ class Listing extends Module
                 $html .= $template->parse();
             }
         }
-        $this->Template->strPeople = $html;
+        $template->html = $html;
+
+        return $template->getResponse();
     }
 }
