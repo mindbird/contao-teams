@@ -8,6 +8,7 @@ $GLOBALS['TL_LANG']['tl_teams']['function'] = array('Funktion', 'Welche Funktion
 $GLOBALS['TL_LANG']['tl_teams']['race'] = array('Rasse', '');
 $GLOBALS['TL_LANG']['tl_teams']['status'] = array('Status', 'Welche Fortschritte hat das Team bisher erreicht?');
 $GLOBALS['TL_LANG']['tl_teams']['image'] = array('Foto', 'Bitte wählen Sie ein Foto aus.');
+$GLOBALS['TL_LANG']['tl_teams']['dateOfBirth'] = array('Geburtsdatum', '');
 $GLOBALS['TL_LANG']['tl_teams']['description'] = array('Beschreibung', 'Bitte geben Sie eine Beschreibung ein.');
 
 

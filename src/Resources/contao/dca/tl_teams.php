@@ -26,7 +26,11 @@ $GLOBALS ['TL_DCA'] ['tl_teams'] = [
             ],
             'headerFields' => [
                 'title'
-            ]
+            ],
+            'child_record_callback' => array(
+                '\Mindbird\Contao\Teams\Table\Teams',
+                'listTeam'
+            )
         ],
         'label' => [
             'fields' => [
