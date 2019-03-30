@@ -1,6 +1,6 @@
 <?php
 
-namespace Mindbird\Contao\Person\Table;
+namespace Mindbird\Contao\Teams\Table;
 
 use Contao\FilesModel;
 use Contao\Image;
