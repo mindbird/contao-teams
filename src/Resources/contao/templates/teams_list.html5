@@ -1,0 +1,14 @@
+<div class="teams block">
+  <?php if ($this->picture) { ?>
+  <figure>
+    <?= $this->insert('picture_default', $this->picture) ?>
+  </figure>
+  <?php } ?>
+
+  <h3><?= $this->team->name ?></h3>
+  <div class="function"><?= $this->team->function ?></div>
+  <div class="race"><?= $this->team->race ?></div>
+  <div class="dateOfBirth"><?= $this->team->dateOfBirth ?></div>
+  <div class="status"><?= $this->team->status ?></div>
+  <div class="description"><?= $this->team->description ?></div>
+</div>

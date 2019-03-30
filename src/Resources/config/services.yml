@@ -1,0 +1,14 @@
+services:
+    _instanceof:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
+            calls:
+                - ["setFramework", ["@contao.framework"]]
+
+        Symfony\Component\DependencyInjection\ContainerAwareInterface:
+            calls:
+                - ["setContainer", ["@service_container"]]
+
+    mindbird.teams.archive.list:
+        class: Mindbird\Contao\Teams\Modules\Listing
+        tags:
+            - { name: contao.frontend_module, category: teamsMenu }
