@@ -43,13 +43,13 @@ class TeamsListingController extends AbstractFrontendModuleController
         $html = '';
         if ($team) {
             while ($team->next()) {
-                $template = new FrontendTemplate($this->templateTeam);
-                $template->team = $team;
+                $templateTeam = new FrontendTemplate($this->templateTeam);
+                $templateTeam->team = $team->row();
 
                 $file = FilesModel::findByPk($team->image);
                 if (null !== $file) {
                     if (null !== $file->path) {
-                        Controller::addImageToTemplate($template, [
+                        Controller::addImageToTemplate($templateTeam, [
                             'singleSRC' => $file->path,
                             'size' => $size,
                             'alt' => $team->name,
@@ -57,7 +57,7 @@ class TeamsListingController extends AbstractFrontendModuleController
                     }
                 }
 
-                $html .= $template->parse();
+                $html .= $templateTeam->parse();
             }
         }
         $template->html = $html;
