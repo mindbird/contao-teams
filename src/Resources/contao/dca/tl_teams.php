@@ -72,7 +72,7 @@ $GLOBALS ['TL_DCA'] ['tl_teams'] = [
     ],
     // Palettes
     'palettes' => [
-        'default' => '{name_legend}, name, function, race, dateOfBirth, status, description; {image_legend}, image;'
+        'default' => '{name_legend}, name, function, race, description; {image_legend}, image;'
     ],
     // Fields
     'fields' => [
@@ -121,24 +121,6 @@ $GLOBALS ['TL_DCA'] ['tl_teams'] = [
                 'maxlength' => 255
             ],
             'sql' => "varchar(255) NOT NULL default ''"
-        ],
-        'dateOfBirth' => [
-            'label' => &$GLOBALS ['TL_LANG'] ['tl_teams'] ['dateOfBirth'],
-            'exclude' => true,
-            'search' => true,
-            'inputType' => 'text',
-            'eval' => [
-                'tl_class' => 'w50',
-                'maxlength' => 255
-            ],
-            'sql' => "varchar(255) NOT NULL default ''"
-        ],
-        'status' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_teams']['status'],
-            'exclude' => true,
-            'search' => true,
-            'inputType' => 'textarea',
-            'sql' => "mediumtext NULL"
         ],
         'image' => [
             'label' => &$GLOBALS ['TL_LANG'] ['tl_teams'] ['image'],
