@@ -14,4 +14,6 @@ use Contao\Model;
 
 class Teams extends Model
 {
+    protected static $strTable = 'tl_teams';
 }
+

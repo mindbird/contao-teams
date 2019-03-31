@@ -9,6 +9,6 @@ services:
                 - ["setContainer", ["@service_container"]]
 
     mindbird.teams.archive.list:
-        class: Mindbird\Contao\Teams\Controller\ListingController
+        class: Mindbird\Contao\Teams\Controller\TeamsListingController
         tags:
             - { name: contao.frontend_module, category: teamsMenu }

@@ -6,3 +6,5 @@ $GLOBALS ['BE_MOD'] ['content'] ['teams'] = [
         'tl_teams'
     ]
 ];
+
+$GLOBALS['TL_MODELS']['tl_teams'] = \Mindbird\Contao\Teams\Models\Teams::class;

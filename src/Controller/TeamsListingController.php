@@ -21,7 +21,7 @@ use Mindbird\Contao\Teams\Models\Teams;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ListingController extends AbstractFrontendModuleController
+class TeamsListingController extends AbstractFrontendModuleController
 {
     /**
      * Template.
@@ -30,14 +30,13 @@ class ListingController extends AbstractFrontendModuleController
      */
     protected $strTemplate = 'mod_teams_list';
 
-    protected $templateTeam = 'teams_item';
-
+    protected $templateTeam = 'teams_list_item';
 
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $team = Teams::findBy(
             'pid',
-            $this->teams_archiv,
+            $model->teams_archiv,
             ['order' => 'sorting ASC']
         );
         $size = StringUtil::deserialize($this->imgSize);
