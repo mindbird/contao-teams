@@ -39,7 +39,6 @@ class TeamsListingController extends AbstractFrontendModuleController
             $model->teams_archiv,
             ['order' => 'sorting ASC']
         );
-        $size = StringUtil::deserialize($this->imgSize);
         $html = '';
         if ($team) {
             while ($team->next()) {
@@ -51,7 +50,7 @@ class TeamsListingController extends AbstractFrontendModuleController
                     if (null !== $file->path) {
                         Controller::addImageToTemplate($templateTeam, [
                             'singleSRC' => $file->path,
-                            'size' => $size,
+                            'size' => $model->imgSize,
                             'alt' => $team->name,
                         ]);
                     }
