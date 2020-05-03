@@ -141,6 +141,7 @@ $GLOBALS ['TL_DCA'] ['tl_teams'] = [
             'search' => true,
             'inputType' => 'textarea',
             'eval' => [
+                'tl_class' => 'clr',
                 'rte' => 'tinyMCE'
             ],
             'sql' => "mediumtext NULL"
