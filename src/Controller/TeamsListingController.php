@@ -50,10 +50,11 @@ class TeamsListingController extends AbstractFrontendModuleController
                     if (null !== $file->path) {
                         Controller::addImageToTemplate($templateTeam, [
                             'singleSRC' => $file->path,
-                            'size' => $model->imgSize,
-                            'alt' => $file->alt,
-                            'title' => $file->title
-                        ]);
+                            'size' => $model->imgSize
+                        ],
+                        null,
+                        null,
+                        $file);
                     }
                 }
 
